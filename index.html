@@ -31,11 +31,12 @@
                 <div class="col-6">
                     <div class="mb-4">
                         <label for="taskName" class="form-label fw-bold">Task Name</label>
-                        <input type="text" class="form-control" id="taskName">
+                        <input type="text" class="form-control" id="taskName" placeholder="Add task name">
                     </div>
                     <div class="mb-4">
                         <label for="taskDescription" class="form-label fw-bold">Task Description</label>
-                        <textarea class="form-control" id="taskDescription" rows="5"></textarea>
+                        <textarea class="form-control" id="taskDescription" rows="5"
+                            placeholder="Add task description"></textarea>
                     </div>
                 </div>
                 <div class="col-6">
@@ -54,7 +55,7 @@
                     </div>
                     <div class="mb-4">
                         <label for="assignedTo" class="form-label fw-bold">Assigned To</label>
-                        <input type="text" class="form-control" id="assigendTo">
+                        <input type="text" class="form-control" id="assigendTo" placeholder="Add names here">
                     </div>
                 </div>
                 <div class="col-12 d-grid my-3">
@@ -64,8 +65,74 @@
         </form>
         <hr>
         <!-- Task card section -->
-        <section>
+        <section class="pb-3">
             <h2 class="pb-3"><i class="fas fa-clipboard-list"></i> Tasks</h2>
+            <div class="row">
+                <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item border-0">
+                        <div class="col">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Task Name <span class="badge bg-danger float-end">To
+                                            Do</span></h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Due Date: 04/25/2021</h6>
+                                    <h6 class="card-subtitle mb-2 text-muted">Assigend to: Everyone</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the
+                                        card's content.</p>
+                                    <div class="float-end">
+                                        <button class="btn btn-light p-2">In progress</button>
+                                        <button class="btn btn-light p-2">Done</button>
+                                        <button class="btn btn-light">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item border-0">
+                        <div class="col">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Task Name <span class="badge bg-danger float-end">To
+                                            Do</span></h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Due Date: 04/25/2021</h6>
+                                    <h6 class="card-subtitle mb-2 text-muted">Assigend to: Everyone</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the
+                                        card's content.</p>
+                                    <div class="float-end">
+
+                                        <button class="btn btn-light p-2">In progress</button>
+                                        <button class="btn btn-light p-2">Done</button>
+                                        <button class="btn btn-light">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item border-0">
+                        <div class="col">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Task Name <span class="badge bg-danger float-end">To
+                                            Do</span></h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Due Date: 04/25/2021</h6>
+                                    <h6 class="card-subtitle mb-2 text-muted">Assigend to: Everyone</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the
+                                        card's content.</p>
+                                    <div class="float-end">
+                                        <button class="btn btn-light p-2">In progress</button>
+                                        <button class="btn btn-light p-2">Done</button>
+                                        <button class="btn btn-light">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
         </section>
 
     </main>
