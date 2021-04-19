@@ -1,3 +1,24 @@
 h1, h2, .rocknroll1 {
     font-family: 'RocknRoll One', sans-serif;
 }
+
+ul {
+    list-style: none;
+}
+
+.inprogress{
+    padding: auto;
+    width: 100px;
+    
+}
+.done{
+    margin-left: 8px;
+    margin-right: 8px;
+    width: 100px;
+}
+.delete{
+    width: 100px;
+}
+.btn:hover{
+    background-color: rgb(120, 189, 231);
+}
