@@ -4,6 +4,7 @@ h1, h2, .rocknroll1 {
 
 ul {
     list-style: none;
+<<<<<<< HEAD
 }
 
 .inprogress{
@@ -21,4 +22,6 @@ ul {
 }
 .btn:hover{
     background-color: rgb(120, 189, 231);
+=======
+>>>>>>> 908de8ad6d4866248a88624c3855ff96669fa763
 }
