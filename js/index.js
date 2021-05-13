@@ -1,3 +1,6 @@
+
+
+
 const submitButton = document.querySelector('#submitButton');
 const TaskList = new TaskManager;
 let name;
@@ -124,5 +127,17 @@ const validFormFieldInput = (e) => {
 }
 
 submitButton.addEventListener('click', validFormFieldInput);
+const tasksList = document.querySelector('#tasks-list');
 
+tasksList.addEventListener('click', (event) => {
+
+    if (event.target.classList.value.includes('done-button')) {
+        let parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
+        let taskId = parseInt(parentTask.dataset.taskId);
+        let task = TaskList.getTaskById(taskId);
+        task.status = 'DONE';
+        TaskList.render();
+    }
+
+})
 

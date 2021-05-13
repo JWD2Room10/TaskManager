@@ -7,23 +7,11 @@ ul {
 
 }
 
-.inprogress{
-    padding: auto;
-    width: 100px;
-    
-}
-.done{
-    margin-left: 8px;
-    margin-right: 8px;
-    width: 100px;
-}
-.delete{
-    width: 100px;
-}
+/* 
 .btn:hover{
     background-color: rgb(120, 189, 231);
 
-}
+} */
 
 #formAlert {
     display: none;
