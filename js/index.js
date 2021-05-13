@@ -104,6 +104,7 @@ const validFormFieldInput = (e) => {
     if (name && description && status && assignedTo && dueDate) {
 
         TaskList.addTask(name, description, assignedTo, dueDate, status);
+        TaskList.render();
         taskName.value = '';
         taskDescription.value = '';
         taskStatus.value = '';
@@ -119,8 +120,8 @@ const validFormFieldInput = (e) => {
         console.log('error');
     }
     console.log(TaskList);
-}
 
+}
 
 submitButton.addEventListener('click', validFormFieldInput);
 
