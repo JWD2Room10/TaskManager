@@ -5,10 +5,24 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status, id) => {
         doneButtonVisibility = 'invisible';
     }
 
+    let statusBackground = '';
+
+    if (status === 'DONE') {
+        statusBackground = 'bg-success';
+
+    } else if (status === 'INPROGRESS') {
+        statusBackground = 'bg-warning';
+    } else if (status === 'REVIEW') {
+        statusBackground = 'bg-info';
+    } else {
+        statusBackground = 'bg-danger';
+    }
+
+
     let html = `<li class="list-item border-0 col-6" data-task-id=${id}>
     <div class="card mb-3">
         <div class="card-body">
-            <h5 class="card-title">${name}<span class="badge bg-danger float-end">${status}</span></h5>
+            <h5 class="card-title">${name}<span class="badge ${statusBackground} float-end">${status}</span></h5>
             <h6 class="card-subtitle mb-2 text-muted">Due Date: ${dueDate}</h6>
             <h6 class="card-subtitle mb-2 text-muted">Assigend to: ${assignedTo}</h6>
             <p class="card-text">${description}</p>

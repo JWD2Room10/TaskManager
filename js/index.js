@@ -69,16 +69,13 @@ const validFormFieldInput = (e) => {
 
     //ask TA for help with the date formatting for task on same day. Time zone ?
     const taskDueDate = document.querySelector('#taskDueDate');
-    const today = new Date();
-    const dueDateCheck = new Date(taskDueDate.value);
-    taskDueDate.style.border = "";
-    // console.log(today)
-    // console.log(dueDateCheck)
 
-    if (dueDateCheck <= today || !taskDueDate.value) {
+    taskDueDate.style.border = "";
+
+    if (!taskDueDate.value) {
 
         const li = document.createElement('LI');
-        li.innerHTML = 'Please select a due date in the future';
+        li.innerHTML = 'Please select a due date';
         formAlert.appendChild(li);
         formAlert.style.display = 'block';
         taskDueDate.style.border = "1px solid red";
