@@ -120,6 +120,8 @@ class TaskManager {
             };
         });
         this.tasks = newTasks;
-        console.log(newTasks);
+        
     }
 }
+
+module.exports = TaskManager;
