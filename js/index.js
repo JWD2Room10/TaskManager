@@ -2,7 +2,14 @@
 
 
 const submitButton = document.querySelector('#submitButton');
+
+//initialize new TaskManager class
 const TaskList = new TaskManager;
+
+//load tasks stored in Local Storage
+TaskList.load();
+TaskList.render();
+
 let name;
 let description;
 let status;
@@ -12,6 +19,7 @@ let dueDate;
 const validFormFieldInput = (e) => {
     e.preventDefault();
 
+    //checking for errors in form submission
     const formAlert = document.querySelector('#formAlert');
     formAlert.style.display = 'none';
     formAlert.innerHTML = 'Check the errors below:';
@@ -33,9 +41,6 @@ const validFormFieldInput = (e) => {
         name = taskName.value;
     }
 
-
-
-
     const taskDescription = document.querySelector('#taskDescription');
     taskDescription.style.border = "";
     if (!taskDescription.value) {
@@ -50,7 +55,6 @@ const validFormFieldInput = (e) => {
         description = taskDescription.value;
 
     }
-
 
     const taskStatus = document.querySelector('#taskStatus');
     taskStatus.style.border = "";
@@ -67,7 +71,7 @@ const validFormFieldInput = (e) => {
         status = taskStatus.value;
     }
 
-    //ask TA for help with the date formatting for task on same day. Time zone ?
+
     const taskDueDate = document.querySelector('#taskDueDate');
 
     taskDueDate.style.border = "";
@@ -101,10 +105,15 @@ const validFormFieldInput = (e) => {
         assignedTo = taskAssignedTo.value;
 
     }
+
+    //adding a new task to the list
     if (name && description && status && assignedTo && dueDate) {
 
         TaskList.addTask(name, description, assignedTo, dueDate, status);
+        TaskList.save();
         TaskList.render();
+
+        //reset form and task values
         taskName.value = '';
         taskDescription.value = '';
         taskStatus.value = '';
@@ -119,20 +128,33 @@ const validFormFieldInput = (e) => {
     } else {
         console.log('error');
     }
-    console.log(TaskList);
+    // console.log(TaskList);
 
 }
 
+//Submit button event listener to add tasks
 submitButton.addEventListener('click', validFormFieldInput);
 const tasksList = document.querySelector('#tasks-list');
 
+
 tasksList.addEventListener('click', (event) => {
 
+    // Event listener for Done button to change status of task
     if (event.target.classList.value.includes('done-button')) {
         let parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
         let taskId = parseInt(parentTask.dataset.taskId);
         let task = TaskList.getTaskById(taskId);
         task.status = 'DONE';
+        TaskList.save();
+        TaskList.render();
+    }
+
+    //Event listener for Delete Button to delete a task
+    if (event.target.classList.value.includes('delete-button')) {
+        let parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
+        let taskId = parseInt(parentTask.dataset.taskId);
+        TaskList.deleteTask(taskId);
+        TaskList.save();
         TaskList.render();
     }
 
