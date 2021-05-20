@@ -1,7 +1,7 @@
 
-// Add a test case that tests how the TaskManager is initialized, ie: the constructor being called when a new TaskManager() is initialized.
-
-const assert = require('assert');
+const { assert, expect } = require('chai');
+const { describe, it, afterEach } = require('mocha');
+// const assert = require('assert');
 const TaskManager = require('../js/taskManager.js');
 
 describe('TaskManager', function () {
@@ -140,5 +140,17 @@ describe('TaskManager', function () {
             assert.deepStrictEqual(expectedResult, TaskList.getTaskById(2));
         });
     });
-
+    describe('class constructor \n', () => {
+        // add a test hook
+        afterEach(() => {
+            console.log('\n...Completed class instance test!\n');
+        });
+        it('should create an instance of the class', () => {
+            const newInstance = new TaskManager();
+            console.log(`   Creating a ${newInstance} class for testing!`);
+            expect(newInstance).to.be.a('object');
+        });
+    });
 })
+
+// Add a test case that tests how the TaskManager is initialized, ie: the constructor being called when a new TaskManager() is initialized.
